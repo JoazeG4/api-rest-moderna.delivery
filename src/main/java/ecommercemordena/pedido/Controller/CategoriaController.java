@@ -46,7 +46,7 @@ public class CategoriaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Categoria>> listarTodosCategoria() throws Exception{
+    public ResponseEntity<List<Categoria>> listarTodasCategoria() throws Exception{
         try {
             log.info("Listanto todas as categoria");
             return new ResponseEntity<>(categoriaService.listaTodosCategoria(), HttpStatus.OK);
@@ -58,15 +58,15 @@ public class CategoriaController {
         }
     }
 
-    @GetMapping("/{nomeCategoria}")
-    public ResponseEntity<Optional<Categoria>> listarCategoriaNome(@PathVariable String nomeCategoria) throws Exception{
+    @GetMapping("/{nome}")
+    public ResponseEntity<Optional<Categoria>> listarCategoriaNome(@PathVariable String nome) throws Exception{
         try {
-            log.info("Listanto categoria: " + nomeCategoria);
-            return new ResponseEntity<>(categoriaService.listarCategoriaNome(nomeCategoria), HttpStatus.OK);
+            log.info("Listanto categoria: " + nome);
+            return new ResponseEntity<>(categoriaService.listarCategoriaNome(nome), HttpStatus.OK);
 
         }catch (Exception exception){
             exception.printStackTrace();
-            log.info("Erro ao listar categoria: " + nomeCategoria);
+            log.info("Erro ao listar categoria: " + nome);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

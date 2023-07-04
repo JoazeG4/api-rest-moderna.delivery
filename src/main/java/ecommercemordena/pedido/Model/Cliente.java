@@ -2,9 +2,6 @@ package ecommercemordena.pedido.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import java.util.HashSet;
 import java.util.Set;
 
